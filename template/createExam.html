@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+  
+    <div class="div-container">
+        <h1 >Crear examen</h1>
+            <form style="display: block;" method="post">
+                <div class="col">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="category">Categoría:</label>
+                    <select id="category" name="category" required>
+                        <option value="">Seleccionar categoría</option>
+                        {% for category in categories %}
+                            <option value="{{ category['_id'] }}">{{ category['name'] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <label for="sampleType">Tipo de muestra:</label>
+                    <input type="text" id="sampleType" name="sampleType" required>
+                </div>
+                <div>
+                    <label for="price">Precio (Bs):</label>
+                    <input type="number" id="price" name="price" step="1.00" required>
+                </div>
+                <div>
+                    <label for="indications">Indicaciones:</label>
+                    <textarea id="indications" name="indications" required></textarea>
+                </div>
+                <div>
+                    <button type="submit">Crear examen</button>
+                </div>
+                
+            </form>
+    </div>
+    
+{% endblock %}

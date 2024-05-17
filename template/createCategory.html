@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 >Crear categoría</h1>
+    <div class="div-container">
+        <div class="center-block">
+            <form method="post">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="description">Descripción:</label>
+                <textarea id="description" name="description" required></textarea>
+                <button type="submit">Crear categoría</button>
+            </form>
+        </div>
+        
+    </div>
+    
+{% endblock %}

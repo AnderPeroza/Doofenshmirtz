@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>{{ exam['name'] }}</h1>
+    <p>Código: {{ exam['_id'] }}</p>
+    <p>Categoría: {{ category }}</p>
+    <p>Tipo de muestra: {{ exam['sampleType'] }}</p>
+    <p>Precio: {{ exam['price'] }}</p>
+    <p>Indicaciones: {{ exam['indications'] }}</p>
+    <a href="{{ url_for('updateExam', exam_id=exam['_id']) }}">Modificar</a>
+    <a href="{{ url_for('deleteExam', exam_id=exam['_id']) }}" onclick="return confirm('¿Estás seguro de eliminar este examen?')">Eliminar</a>
+{% endblock %}

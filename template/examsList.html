@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Exámenes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Tipo de muestra</th>
+                <th>Precio (Bs)</th>
+                <th>Indicaciones</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for exam in exams %}
+                <tr>
+                    <td>{{ exam['name'] }}</td>
+                    <td>{{ exam['category'] }}</td>
+                    <td>{{ exam['sampleType'] }}</td>
+                    <td>{{ exam['price'] }}</td>
+                    <td>{{ exam['indications'] }}</td>
+                    <td>
+                        <a href="{{ url_for('exam', exam_id=exam['id']) }}">Consultar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('createExam') }}">Crear examen</a>
+{% endblock %}

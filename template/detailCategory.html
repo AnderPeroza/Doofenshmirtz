@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>{{ category['name'] }}</h1>
+    <p>Código: {{ category['_id'] }}</p>
+    <p>Nombre: {{ category['name'] }}</p>
+    <p>Descripcion: {{ category['description'] }}</p>
+    <a href="{{ url_for('updateCategory', category_id=category['_id']) }}">Modificar</a>
+    <a href="{{ url_for('deleteCategory', category_id=category['_id']) }}" onclick="return confirm('¿Estás seguro de eliminar esta categoria')">Eliminar</a>
+{% endblock %}

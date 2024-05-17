@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Actualizar categoria</h1>
+    <form method="post">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" value="{{ category['name'] }}" required>
+        <label for="sampleType">Decripcion:</label>
+        <input type="text" id="description" name="description" value="{{ category['description'] }}" required>
+       
+        <button type="submit">Actualizar categoria</button>
+    </form>
+{% endblock %}

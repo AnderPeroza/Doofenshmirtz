@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <div class="div-container">
+        <h1>Iniciar sesión</h1>
+        <div>
+            <form method="post">
+                <div>
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <button type="submit">Iniciar sesión</button>
+                </div>
+            
+        </form>
+        </div>
+        
+    </div>
+    
+{% endblock %}

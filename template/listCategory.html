@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Categorias</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for category in categories %}
+                <tr>
+                    <td>{{ category['name'] }}</td>
+                    <td>{{ category['description'] }}</td>
+                    
+                    <td>
+                        <a href="{{ url_for('category', category_id=category['_id']) }}">Consultar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('createCategory') }}">Crear categoria</a>
+{% endblock %}
